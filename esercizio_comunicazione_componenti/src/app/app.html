@@ -1,0 +1,23 @@
+<!--APP COMPONENT-->
+<div style="border:2px solid #222; padding:12px; margin:12px 0;">
+  <h2 style="margin-top:0;">APP COMPONENT (genitore)</h2>
+  <p>Messaggio che voglio inviare al figlio: <strong>{{ messaggio }}</strong></p>
+  
+  <!--Componente1-->
+  <app-componente1 [testo]="messaggio"></app-componente1>
+  
+  <!--Controllo se ci sono post disponibili-->
+  <div *ngIf="postsVisibili.length === 0">
+    <p>Nessun post disponibile</p>
+  </div>
+
+  <!--Visualizza i post che soddisfano la condizione-->
+  <app-post
+    *ngFor="let p of postsVisibili"
+    [titolo]="p.titolo"
+    [testo]="p.testo">
+  </app-post>
+  
+  <!--Mostra il numero di post visibili-->
+  <p>Post visualizzati: {{ postCount }}</p>
+</div>
