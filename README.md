@@ -1,0 +1,1 @@
+# esercizio_comunicazione_componenti
